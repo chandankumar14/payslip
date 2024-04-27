@@ -1,0 +1,94 @@
+.container-fluid {
+    margin-top: 10px;
+    font-size: 25px;
+}
+.inpt {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+}
+.btn_style {
+    float: inline-end;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+.heading {
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    background-color: lightgrey;
+    color: black;
+}
+.address {
+    font-family: auto;
+    margin-top: -15px;
+}
+.second_heading {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin-top: -12px;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+.half {
+    flex: 1;
+    height: 100px;
+    margin-top: -12px;
+}
+.container2 {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    border-collapse: collapse;
+}
+.half2 {
+    flex: 1;
+}
+table {
+    border: 2px solid;
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    height: auto;
+}
+td,th {
+    border: 1.5px solid;
+    width: 50%;
+    text-align: left;
+    padding-left: 5px;
+    height: 25px;
+    font-family: auto;
+}
+.td_data{
+    text-align: right;
+    padding-right: 5px;
+}
+th{
+    width: 50%;
+    text-align: left;
+    padding-left: 5px;
+    font-family: auto; 
+    border: 0px solid;  
+}
+.employeeDetails {
+    margin: 0px;
+    float: left;
+    font-family: 'Times New Roman', Times, serif;
+}
+.msg{
+    text-align: left;
+    font-family: auto;
+    margin-bottom: auto;
+    margin-top: inherit;
+}
+label{
+    font-size: small;
+    float: left;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}

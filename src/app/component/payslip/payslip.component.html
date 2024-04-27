@@ -1,0 +1,184 @@
+<!-- Form field start here ----->
+<div class="container-fluid" *ngIf="status">
+  <h1 class="heading">PaySlip Form</h1>
+  <hr>
+  <form [formGroup]="paySlipData">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Employee Name">Employee Name</label>
+        <input type="text" class="form-control inpt" placeholder="Employee Name" formControlName="EmployeeName">
+        </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Employee Address">Employee Address</label>
+        <input type="text" class="form-control inpt" placeholder="Employee Address" formControlName="EmployeeAddress">
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Employee ID">Employee ID</label>
+        <input type="text" class="form-control inpt" placeholder="Employee ID" formControlName="EmployeeID">
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Start Date">Start Date</label>
+        <input type="date" class="form-control inpt" placeholder="Start Date" formControlName="StartDate">
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Pay Period Begin Date">Pay Period Begin Date</label>
+        <input type="date" class="form-control inpt" placeholder="Pay Period Begin Date" formControlName="BeginDate">
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Pay Period Begin Date">Pay Period End Date</label>
+        <input type="date" class="form-control inpt"
+        placeholder="Pay Period End Date" formControlName="EndDate">
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="No. of Working Days">No. of Working Days</label>
+        <input type="number" class="form-control inpt" placeholder="No. of Working Days" formControlName="WorkingDays">
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Pan Number">Pan Number</label>
+        <input type="text" class="form-control inpt" placeholder="Pan Number" formControlName="PanNumber">
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Stipend">Stipend</label>
+        <input type="number" class="form-control inpt" placeholder="Stipend" formControlName="Stipend">
+      </div>
+    </div>
+  </form>
+
+  <button type="button" class="btn btn-success btn_style" (click)="PaySlipFormData()">Preview</button>
+
+</div>
+<!-- Form field end here----->
+
+
+<table *ngIf="!status" style="width: 99.5%; margin-left: 3px;" id="payslip">
+  <tr>
+    <!-----paySlip Heading ----->
+    <h1 class="heading">Acelucid Technologies Private Limited</h1>
+    <!--PaySlip Address---->
+    <p class="address">Address: BHIVE Workspace - No.112, AKR Tech Park, "A" and, 7th Mile
+      <br>
+      Hosur Rd, Krishna Reddy Industrial Area
+    </p>
+  </tr>
+  <p style="background-color: lightgray; height: 10px; margin-top: -15px;"></p>
+  <h6 class="second_heading">Salary Slip:April 2023</h6>
+  <!--Employee Details Section------>
+  <tr>
+    <div class="container">
+      <div class="half">
+        <p class="employeeDetails">Employee Name:{{payload?.EmployeeName}}</p><br>
+        <p class="employeeDetails">Employee Address:{{payload?.EmployeeAddress}}</p><br>
+        <p class="employeeDetails">Employee ID:{{payload?.EmployeeID}}</p><br>
+        <p class="employeeDetails">Start Date:{{payload?.StartDate}}</p><br>
+      </div>
+      <div class="half">
+        <p class="employeeDetails">Pay Period Begin Date:{{payload?.BeginDate}}</p><br>
+        <p class="employeeDetails">Pay Period End Date:{{payload?.EndDate}}</p><br>
+        <p class="employeeDetails">No. of Working Days{{payload?.WorkingDays}}</p><br>
+        <p class="employeeDetails">Pan Number:{{payload?.PanNumber}}</p><br>
+      </div>
+    </div>
+  </tr>
+
+  <!--PaySlip Data------>
+  <div class="container2">
+    <div class="half2">
+      <table style="border: 1.5px solid; margin: 0px;">
+        <tr>
+          <th st>Earnings</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Stipend</td>
+          <td class="td_data">{{payload?.Stipend}}</td>
+        </tr>
+        <tr>
+          <td>HRA</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td>Other Allowance</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td>Employer PF 13% of Basic</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td>ESI @3.25% on Gross</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Total Earnings</td>
+          <td class="td_data">{{payload?.Stipend}}</td>
+        </tr>
+
+      </table>
+
+      <table style="border: 0px; margin: 0px;">
+        <tr>
+          <th style="border-bottom: 2px solid;">Current NET Salary</th>
+        </tr>
+      </table>
+
+    </div>
+    <div class="half2">
+      <table style="border: 1.5px solid; margin: 0px;">
+        <tr>
+          <th >Deductions</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Professional Tax</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td>PF</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td>ESI @ 0.75% on Gross</td>
+          <td class="td_data">Nill</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>Total Deduction</td>
+          <td class="td_data">--</td>
+        </tr>
+      </table>
+
+      <table style="border: 0px; margin: 0px;">
+        <tr>
+          <th style="text-align: right; padding-right: 5px; border-bottom: 2px solid;">{{payload?.Stipend}}</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <p class="msg">
+    This is a system generated report and does not require any Signature
+  </p>
+</table>
+<button type="button" class="btn btn-success btn_style" *ngIf="!status" (click)="generatePDF()">Generate PDF</button>
+<button type="button" class="btn btn-danger btn_style" *ngIf="!status" (click)="CancelPaySlip()">Cancel</button>
