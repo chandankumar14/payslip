@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent  implements OnInit{
   title = 'Acelucid';
-  isLoggedIn: boolean = true
+  isLoggedIn: boolean = false
   userName: string = "acelucid"
   Password: string = "acelucid@123"
   loginForm!:FormGroup
