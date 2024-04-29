@@ -28,7 +28,7 @@
     border-bottom: 2px solid;
     text-align: center;
     color: black;
-    font-size: 14px;
+    font-size: 20px;
     margin-top: -12px;
 }
 .container {
@@ -53,6 +53,7 @@ table {
     border: 2px solid;
     width: 100%;
     margin-top: 20px;
+    font-size: 18px;
     border-collapse: collapse;
     height: auto;
 }

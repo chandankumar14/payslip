@@ -54,7 +54,7 @@ export class PayslipComponent implements OnInit{
 
   generatePDF() {
   const elementToPrint: any = document.getElementById("payslip");
-   html2canvas(elementToPrint,{scale:2}).then((canvas) => {
+   html2canvas(elementToPrint,{scale:5}).then((canvas) => {
       const PDF = new jspdf();
       let imageWidth =190;
       let imageheigth =(canvas.height*imageWidth)/canvas.width
@@ -62,7 +62,5 @@ export class PayslipComponent implements OnInit{
       PDF.save('payslip.pdf')
       this.status = true
     })
-
-  
   }
 }
