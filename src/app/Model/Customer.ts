@@ -21,4 +21,6 @@ export interface PaySlipPayload {
     StartDate: any
     PanNumber: any
     Stipend:number
+    Deduction:number,
+    NETSalary:number | any
 }

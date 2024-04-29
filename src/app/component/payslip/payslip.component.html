@@ -7,7 +7,7 @@
       <div class="col-md-4 col-sm-6 col-xs-12 form-group">
         <label for="Employee Name">Employee Name</label>
         <input type="text" class="form-control inpt" placeholder="Employee Name" formControlName="EmployeeName">
-        </div>
+      </div>
       <div class="col-md-4 col-sm-6 col-xs-12 form-group">
         <label for="Employee Address">Employee Address</label>
         <input type="text" class="form-control inpt" placeholder="Employee Address" formControlName="EmployeeAddress">
@@ -29,8 +29,7 @@
 
       <div class="col-md-4 col-sm-6 col-xs-12 form-group">
         <label for="Pay Period Begin Date">Pay Period End Date</label>
-        <input type="date" class="form-control inpt"
-        placeholder="Pay Period End Date" formControlName="EndDate">
+        <input type="date" class="form-control inpt" placeholder="Pay Period End Date" formControlName="EndDate">
       </div>
 
       <div class="col-md-4 col-sm-6 col-xs-12 form-group">
@@ -46,6 +45,10 @@
       <div class="col-md-4 col-sm-6 col-xs-12 form-group">
         <label for="Stipend">Stipend</label>
         <input type="number" class="form-control inpt" placeholder="Stipend" formControlName="Stipend">
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+        <label for="Stipend">Deduction</label>
+        <input type="number" class="form-control inpt" placeholder="Deduction Amount" formControlName="Deduction">
       </div>
     </div>
   </form>
@@ -66,24 +69,77 @@
       Hosur Rd, Krishna Reddy Industrial Area
     </p>
   </tr>
-  <p style="background-color: lightgray; height: 10px; margin-top: -15px;"></p>
+  <p style="background-color: lightgray; height: 10px; margin-top: -10px;"></p>
   <h6 class="second_heading">Salary Slip</h6>
   <!--Employee Details Section------>
   <tr>
     <div class="container">
       <div class="half">
-        <p class="employeeDetails">Employee Name:{{payload?.EmployeeName}}</p><br>
-        <p class="employeeDetails">Employee Address:{{payload?.EmployeeAddress}}</p><br>
-        <p class="employeeDetails">Employee ID:{{payload?.EmployeeID}}</p><br>
-        <p class="employeeDetails">Start Date:{{payload?.StartDate}}</p><br>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails">Employee Name:</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.EmployeeName}}</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails">Employee Address:</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.EmployeeAddress}}</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails ">Employee ID:</p>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.EmployeeID}}</p>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails">Start Date:</p>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.StartDate}}</p>
+          </div>
+
+        </div>
+
+        
       </div>
+
       <div class="half">
-        <p class="employeeDetails">Pay Period Begin Date:{{payload?.BeginDate}}</p><br>
-        <p class="employeeDetails">Pay Period End Date:{{payload?.EndDate}}</p><br>
-        <p class="employeeDetails">No. of Working Days:{{payload?.WorkingDays}}</p><br>
-        <p class="employeeDetails">Pan Number:{{payload?.PanNumber}}</p><br>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails"> Pay Period Begin Date:</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="display employeeDetails">{{payload?.BeginDate}}</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails">Pay Period End Date:</p><br>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.EndDate}}</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails"> No. of Working Days:</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.WorkingDays}}</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails">Pan Number:</p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="employeeDetails display">{{payload?.PanNumber}}</p>
+          </div>
+      
+        </div>
+      
       </div>
-    </div>
+      </div>
   </tr>
 
   <!--PaySlip Data------>
@@ -135,7 +191,7 @@
     <div class="half2">
       <table style="border: 1.5px solid; margin: 0px;">
         <tr>
-          <th >Deductions</th>
+          <th>Deductions</th>
           <th></th>
         </tr>
         <tr>
@@ -165,13 +221,13 @@
 
         <tr>
           <td>Total Deduction</td>
-          <td class="td_data">--</td>
+          <td class="td_data">{{payload?.Deduction}}</td>
         </tr>
       </table>
 
       <table style="border: 0px; margin: 0px;">
         <tr>
-          <th style="text-align: right; padding-right: 5px; border-bottom: 2px solid;">{{payload?.Stipend}}</th>
+          <th style="text-align: right; padding-right: 5px; border-bottom: 2px solid;">{{payload?.NETSalary}}</th>
         </tr>
       </table>
     </div>

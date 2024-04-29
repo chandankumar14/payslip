@@ -24,7 +24,9 @@ export class PayslipComponent implements OnInit{
       WorkingDays: new FormControl('', Validators.required),
       StartDate: new FormControl('', [Validators.required]),
       PanNumber: new FormControl('', Validators.required),
-      Stipend: new FormControl('', Validators.required)
+      Stipend: new FormControl('', Validators.required),
+      Deduction:new FormControl('',Validators.required),
+      NETSalary:new FormControl('',)
     })
 
     
@@ -42,7 +44,9 @@ export class PayslipComponent implements OnInit{
       WorkingDays: this.paySlipData.controls['WorkingDays'].value ? this.paySlipData.controls['WorkingDays'].value : 'N/A',
       StartDate: this.paySlipData.controls['StartDate'].value ? this.paySlipData.controls['StartDate'].value : 'N/A',
       PanNumber: this.paySlipData.controls['PanNumber'].value ? this.paySlipData.controls['PanNumber'].value : 'N/A',
-      Stipend: this.paySlipData.controls['Stipend'].value ? this.paySlipData.controls['Stipend'].value : 'N/A',
+      Stipend: this.paySlipData.controls['Stipend'].value ? this.paySlipData.controls['Stipend'].value  : 'N/A',
+      Deduction: this.paySlipData.controls['Deduction'].value ? this.paySlipData.controls['Deduction'].value : 'N/A',
+      NETSalary: this.paySlipData.controls['Stipend'].value? ((this.paySlipData.controls['Stipend'].value)-(this.paySlipData.controls['Deduction'].value)):'N/A'
     }
     this.status = false
    
