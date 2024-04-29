@@ -94,16 +94,12 @@ label{
     font-family: 'Times New Roman', Times, serif;
 }
 
-.table_content_container{
-    display: flex;
-    width: 100%;
-}
-
-.table_content{
-    flex: 1;
-}
 .display{
     padding-right: 10px;
-    align-items: end;
     text-align: right;
+}
+.details{
+    float: right;
+    padding-right: 10px;
+    text-align: justify;
 }
